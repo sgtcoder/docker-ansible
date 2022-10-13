@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  ansible:
+    image: sgtcoder/ansible:latest
+    container_name: ansible
+    network_mode: bridge
+    environment:
+      - TZ=America/Phoenix
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /root/dockers/ansible:/ansible
+      - /root/.ssh:/root/.ssh:ro
+      - /root/dockers/nginx/certs/:/certs
+      - /root/dockers/plex/ssl:/plex/ssl
+    restart: unless-stopped
