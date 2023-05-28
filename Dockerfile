@@ -1,4 +1,4 @@
-FROM almalinux:latest
+FROM almalinux:8
 
 RUN dnf upgrade --refresh -y && dnf install nano openssh-clients openssl python39 python39-pip -y
 
